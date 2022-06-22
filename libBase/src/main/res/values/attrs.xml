@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="toolbarView">
+        <attr name="leftImageView" format="reference" />
+        <attr name="centerText" format="string|reference" />
+        <attr name="centerTextColor" format="color" />
+        <attr name="centerTextSize" format="dimension" />
+        <attr name="rightText" format="string|reference" />
+        <attr name="rightTextColor" format="color" />
+        <attr name="rightTextSize" format="dimension" />
+        <attr name="rightImageView" format="reference" />
+        <attr name="showBottomLine" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MsgView">
+        <!-- 圆角矩形背景色 -->
+        <attr name="mv_backgroundColor" format="color" />
+        <!-- 圆角弧度,单位dp-->
+        <attr name="mv_cornerRadius" format="dimension" />
+        <!-- 圆角弧度,单位dp-->
+        <attr name="mv_strokeWidth" format="dimension" />
+        <!-- 圆角边框颜色-->
+        <attr name="mv_strokeColor" format="color" />
+        <!-- 圆角弧度是高度一半-->
+        <attr name="mv_isRadiusHalfHeight" format="boolean" />
+        <!-- 圆角矩形宽高相等,取较宽高中大值-->
+        <attr name="mv_isWidthHeightEqual" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="statusLayout">
+        <attr name="imageSrc" format="reference" />
+        <attr name="tipText" format="string|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SlidingTabLayout">
+        <!-- indicator -->
+        <attr name="sl_indicator_color" format="color" />
+        <attr name="sl_indicator_height" format="dimension" />
+        <attr name="sl_indicator_width" format="dimension" />
+        <attr name="sl_indicator_margin_left" format="dimension" />
+        <attr name="sl_indicator_margin_top" format="dimension" />
+        <attr name="sl_indicator_margin_right" format="dimension" />
+        <attr name="sl_indicator_margin_bottom" format="dimension" />
+        <attr name="sl_indicator_corner_radius" format="dimension" />
+        <attr name="sl_indicator_gravity" format="integer" />
+        <attr name="sl_indicator_style" format="integer" />
+        <attr name="sl_indicator_width_equal_title" format="boolean" />
+
+        <!-- underline -->
+        <attr name="sl_underline_color" format="color" />
+        <attr name="sl_underline_height" format="dimension" />
+        <attr name="sl_underline_gravity" format="integer" />
+
+        <!-- divider -->
+        <attr name="sl_divider_color" format="color" />
+        <attr name="sl_divider_width" format="dimension" />
+        <attr name="sl_divider_padding" format="dimension" />
+
+        <!-- tab -->
+        <attr name="sl_tab_padding" format="dimension" />
+        <attr name="sl_tab_space_equal" format="boolean" />
+        <attr name="sl_tab_width" format="dimension" />
+
+        <!-- title -->
+        <attr name="sl_textsize" format="dimension" />
+        <attr name="sl_textSelectColor" format="color" />
+        <attr name="sl_textUnselectColor" format="color" />
+        <attr name="sl_textStyle" format="integer" />
+        <attr name="sl_textAllCaps" format="boolean" />
+
+    </declare-styleable>
+
+    <!-- 以下是重用attr的正确姿势,一切为了在布局中可以自动提示-->
+    <!-- 圆角矩形背景色 -->
+    <attr name="rv_backgroundColor" format="color"/>
+    <!-- 圆角矩形背景色press -->
+    <attr name="rv_backgroundPressColor" format="color"/>
+    <!-- 圆角弧度,单位dp-->
+    <attr name="rv_cornerRadius" format="dimension"/>
+    <!-- 圆角弧度,单位dp-->
+    <attr name="rv_strokeWidth" format="dimension"/>
+    <!-- 圆角边框颜色-->
+    <attr name="rv_strokeColor" format="color"/>
+    <!-- 圆角边框颜色press -->
+    <attr name="rv_strokePressColor" format="color"/>
+    <!-- 文字颜色press-->
+    <attr name="rv_textPressColor" format="color"/>
+    <!-- 圆角弧度是高度一半-->
+    <attr name="rv_isRadiusHalfHeight" format="boolean"/>
+    <!-- 圆角矩形宽高相等,取较宽高中大值-->
+    <attr name="rv_isWidthHeightEqual" format="boolean"/>
+    <!-- 圆角弧度,单位dp,TopLeft-->
+    <attr name="rv_cornerRadius_TL" format="dimension"/>
+    <!-- 圆角弧度,单位dp,TopRight-->
+    <attr name="rv_cornerRadius_TR" format="dimension"/>
+    <!-- 圆角弧度,单位dp,BottomLeft-->
+    <attr name="rv_cornerRadius_BL" format="dimension"/>
+    <!-- 圆角弧度,单位dp,BottomRight-->
+    <attr name="rv_cornerRadius_BR" format="dimension"/>
+    <!-- 是否有Ripple效果,api21+有效-->
+    <attr name="rv_isRippleEnable" format="boolean"/>
+
+    <declare-styleable name="RoundTextView">
+        <attr name="rv_backgroundColor"/>
+        <attr name="rv_backgroundPressColor"/>
+        <attr name="rv_cornerRadius"/>
+        <attr name="rv_strokeWidth"/>
+        <attr name="rv_strokeColor"/>
+        <attr name="rv_strokePressColor"/>
+        <attr name="rv_textPressColor"/>
+        <attr name="rv_isRadiusHalfHeight"/>
+        <attr name="rv_isWidthHeightEqual"/>
+        <attr name="rv_cornerRadius_TL"/>
+        <attr name="rv_cornerRadius_TR"/>
+        <attr name="rv_cornerRadius_BL"/>
+        <attr name="rv_cornerRadius_BR"/>
+        <attr name="rv_isRippleEnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundLinearLayout">
+        <attr name="rv_backgroundColor"/>
+        <attr name="rv_backgroundPressColor"/>
+        <attr name="rv_cornerRadius"/>
+        <attr name="rv_strokeWidth"/>
+        <attr name="rv_strokeColor"/>
+        <attr name="rv_strokePressColor"/>
+        <attr name="rv_isRadiusHalfHeight"/>
+        <attr name="rv_isWidthHeightEqual"/>
+        <attr name="rv_cornerRadius_TL"/>
+        <attr name="rv_cornerRadius_TR"/>
+        <attr name="rv_cornerRadius_BL"/>
+        <attr name="rv_cornerRadius_BR"/>
+        <attr name="rv_isRippleEnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundRelativeLayout">
+        <attr name="rv_backgroundColor"/>
+        <attr name="rv_backgroundPressColor"/>
+        <attr name="rv_cornerRadius"/>
+        <attr name="rv_strokeWidth"/>
+        <attr name="rv_strokeColor"/>
+        <attr name="rv_strokePressColor"/>
+        <attr name="rv_isRadiusHalfHeight"/>
+        <attr name="rv_isWidthHeightEqual"/>
+        <attr name="rv_cornerRadius_TL"/>
+        <attr name="rv_cornerRadius_TR"/>
+        <attr name="rv_cornerRadius_BL"/>
+        <attr name="rv_cornerRadius_BR"/>
+        <attr name="rv_isRippleEnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundFrameLayout">
+        <attr name="rv_backgroundColor"/>
+        <attr name="rv_backgroundPressColor"/>
+        <attr name="rv_cornerRadius"/>
+        <attr name="rv_strokeWidth"/>
+        <attr name="rv_strokeColor"/>
+        <attr name="rv_strokePressColor"/>
+        <attr name="rv_isRadiusHalfHeight"/>
+        <attr name="rv_isWidthHeightEqual"/>
+        <attr name="rv_cornerRadius_TL"/>
+        <attr name="rv_cornerRadius_TR"/>
+        <attr name="rv_cornerRadius_BL"/>
+        <attr name="rv_cornerRadius_BR"/>
+        <attr name="rv_isRippleEnable"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="rv_left_top_corner_radius" format="dimension" />
+        <attr name="rv_right_top_corner_radius" format="dimension" />
+        <attr name="rv_left_bottom_corner_radius" format="dimension" />
+        <attr name="rv_right_bottom_corner_radius" format="dimension" />
+        <attr name="rv_border_width" format="dimension" />
+        <attr name="rv_border_color" format="color" />
+        <attr name="rv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingView">
+        <!--  菊花颜色  -->
+        <attr name="aiv_color" format="color" />
+        <!--  开始角度  -->
+        <attr name="aiv_startAngle" format="integer" />
+        <!--  线条宽度  -->
+        <attr name="aiv_strokeWidth" format="dimension" />
+        <!--  是否自动开始  -->
+        <attr name="aiv_auto_start" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="DotView">
+        <attr name="dot_radius" format="dimension" />
+        <attr name="dot_span" format="dimension" />
+        <attr name="dot_unselected_color" format="integer" />
+        <attr name="dot_selected_color" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="EasySwipeMenuLayout">
+        <attr name="leftMenuView" format="reference" />
+        <attr name="rightMenuView" format="reference" />
+        <attr name="contentView" format="reference" />
+        <attr name="canRightSwipe" format="boolean" />
+        <attr name="canLeftSwipe" format="boolean" />
+        <attr name="fraction" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="slideswitch">
+        <attr name="themeColor" format="color" />
+        <attr name="closeColor" format="color" />
+        <attr name="isOpen" format="boolean" />
+        <attr name="shape">
+            <enum name="rect" value="1" />
+            <enum name="circle" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="pickerview">
+        <attr name="wheelview_gravity">
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+        </attr>
+        <attr name="wheelview_textSize" format="dimension" />
+        <attr name="wheelview_textColorOut" format="color" />
+        <attr name="wheelview_textColorCenter" format="color" />
+        <attr name="wheelview_dividerColor" format="color" />
+        <attr name="wheelview_dividerWidth" format="dimension" />
+        <attr name="wheelview_lineSpacingMultiplier" format="float" />
+    </declare-styleable>
+
+</resources>

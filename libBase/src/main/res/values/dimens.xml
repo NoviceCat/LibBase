@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="common_toolbar_height">44dp</dimen>
+    <dimen name="pickerview_textsize">20sp</dimen>
+</resources>

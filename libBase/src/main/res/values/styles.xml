@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="base_toolbar" parent="@style/toolbar" tools:ignore="ResourceName" />
+
+    <style name="toolbar" tools:ignore="ResourceName">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_toolbar_height</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetLeft">0dp</item>
+    </style>
+
+    <!-- ToolBar菜单样式.-->
+    <style name="popup_theme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="overlapAnchor">false</item>  <!--设置不覆盖锚点-->
+    </style>
+
+    <style name="CustomDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@color/common_dialog_bg</item>
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <!--圓角2-->
+    <style name="shapeRoundedCorner2" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">2dp</item>
+    </style>
+
+    <!--圓角3-->
+    <style name="shapeRoundedCorner3" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">3dp</item>
+    </style>
+
+    <!--圓角4-->
+    <style name="shapeRoundedCorner4" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <!--圓角5-->
+    <style name="shapeRoundedCorner5" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <!--圓角6-->
+    <style name="shapeRoundedCorner6" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <!--圓角7-->
+    <style name="shapeRoundedCorner7" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">7dp</item>
+    </style>
+
+    <!--圓角8-->
+    <style name="shapeRoundedCorner8" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <!--圓角9-->
+    <style name="shapeRoundedCorner9" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">9dp</item>
+    </style>
+
+    <!--圓角10-->
+    <style name="shapeRoundedCorner10" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <!--圓角11-->
+    <style name="shapeRoundedCorne11" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">11dp</item>
+    </style>
+
+    <!--圓角12-->
+    <style name="shapeRoundedCorner12" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <!--圓角13-->
+    <style name="shapeRoundedCorner13" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">13dp</item>
+    </style>
+
+    <!--圓角14-->
+    <style name="shapeRoundedCorner14" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14dp</item>
+    </style>
+
+    <!--圓角15-->
+    <style name="shapeRoundedCorner15" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15dp</item>
+    </style>
+
+    <!--圓角16-->
+    <style name="shapeRoundedCorner16" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!--圓角17-->
+    <style name="shapeRoundedCorner17" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">17dp</item>
+    </style>
+
+    <!--圓角18-->
+    <style name="shapeRoundedCorner18" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+
+    <!--圓角19-->
+    <style name="shapeRoundedCorner19" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">19dp</item>
+    </style>
+
+    <!--圓角20-->
+    <style name="shapeRoundedCorner20" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <!--圓角21-->
+    <style name="shapeRoundedCorner21" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">21dp</item>
+    </style>
+
+    <!--圓角22-->
+    <style name="shapeRoundedCorner22" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">22dp</item>
+    </style>
+
+    <!--圓角23-->
+    <style name="shapeRoundedCorner23" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">23dp</item>
+    </style>
+
+    <!--圓角24-->
+    <style name="shapeRoundedCorner24" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <!--圓角25-->
+    <style name="shapeRoundedCorner25" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25dp</item>
+    </style>
+
+    <!--圓形-->
+    <style name="shapeCircle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="BaseDialogFragment" parent="@style/Theme.AppCompat.Dialog">
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+
+    <style name="BaseDialogFadeAnimation"><!-- 慢慢变大动画 -->
+        <item name="android:windowEnterAnimation">@anim/fra_dialog_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fra_dialog_fade_out</item>
+    </style>
+</resources>

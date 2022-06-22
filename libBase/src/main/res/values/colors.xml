@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="status_layout_background_color">#FFFFFF</color>
+    <color name="status_layout_tip_text_color">#666666</color>
+
+    <color name="common_dialog_bg">#20000000</color>
+    <color name="common_black_color">#252525</color>
+    <color name="common_gray_color">#F3F5F9</color>
+    <color name="common_purple_color">#241640</color>
+    <color name="common_white_color">#FFFFFF</color>
+    <color name="common_yellow_color">#FBEB74</color>
+    <color name="common_red_color">#F15C47</color>
+    <color name="common_orange_color">#FF8340</color>
+
+    <color name="msg_view">#FF5E68</color>
+    <color name="c_323233">#323233</color><!--字体颜色1-->
+    <color name="c_979799">#979799</color><!--字体颜色2-->
+    <color name="c_7E7E80">#7E7E80</color><!--字体颜色3-->
+    <color name="c_656566">#656566</color><!--字体颜色4-->
+    <color name="c_b1b1b3">#b1b1b3</color><!--字体颜色5-->
+    <color name="c_18ce6a">#18ce6a</color><!--字体颜色6-->
+    <color name="c_343434">#343434</color><!--字体颜色7-->
+    <color name="c_999999">#999999</color><!--字体颜色8-->
+
+    <color name="line1">#f2f2f5</color><!--分割线1-->
+    <color name="line2">#dadce3</color><!--分割线2-->
+    <color name="line3">#f5f5f5</color><!--分割线3-->
+    <color name="c_fbd973">#fbd973</color>
+
+</resources>

@@ -1,0 +1,100 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions {
+            jvmTarget = '1.8'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+
+    //android support
+    api dep.appcompat
+    api dep.recyclerview
+    api dep.constraintlayout
+    api dep.material
+
+    //kt
+    api dep.kt_core
+    api dep.kt_stdlib
+    api dep.kt_coroutines_core
+    api dep.kt_coroutines_android
+    api dep.lifecycler_ext
+    api dep.lifecycler_viewmodel
+
+    //网络
+    api dep.okhttp
+    api dep.logging_interceptor
+    api dep.retrofit
+    api dep.converter_gson
+
+    //下拉刷新+列表
+    api dep.refreshLayout
+    api dep.refreshHeader
+    api dep.refreshFooter
+    api dep.brvah
+
+    //Glide
+    api dep.glide
+    kapt dep.glideCompiler
+    api dep.glideIntegration
+    api dep.glideTransform
+
+    //blankJ
+    api dep.utils
+
+    //basePopup
+    api dep.basePopup
+
+    //web
+    api dep.agentweb
+    api dep.filechooser
+    api dep.sonic
+
+    //lottie
+    api dep.lottie
+
+    //zxing
+    api dep.zxing
+
+    //banner
+    api dep.banner
+
+    //抓包工具
+    api dep.chuck
+
+    //图片选择器
+    api dep.pictureSelector
+}
+
+

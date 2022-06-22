@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.novice.base.roundview.RoundLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="270dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:rv_backgroundColor="@android:color/white"
+    app:rv_cornerRadius="5dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:paddingLeft="31dp"
+        android:paddingRight="31dp"
+        android:textColor="#222222"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="这是标题" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="22dp"
+        android:gravity="center"
+        android:paddingLeft="31dp"
+        android:paddingRight="31dp"
+        android:textColor="#222222"
+        android:textSize="14sp"
+        tools:text="这是内容这是内容这是内容这是内容" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e2e2e2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ok"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:textColor="#FD4557"
+            android:textSize="16sp"
+            tools:text="确定" />
+
+</com.novice.base.roundview.RoundLinearLayout>

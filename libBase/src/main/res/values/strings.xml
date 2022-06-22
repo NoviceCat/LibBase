@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">libBase</string>
+
+    <string name="status_layout_manager_loading">加载中</string>
+    <string name="status_layout_load_empty">暂无内容</string>
+    <string name="status_layout_load_error">数据加载失败，请刷新重试</string>
+    <string name="status_layout_net_disconnect">网络异常，请刷新重试</string>
+
+</resources>
