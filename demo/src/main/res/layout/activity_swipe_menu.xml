@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:mv="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.novice.base.widget.swipe.EasySwipeMenuLayout
+            android:id="@+id/swipe_menu"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            app:contentView="@+id/cl_content"
+            app:rightMenuView="@+id/linear_right">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_head"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/avatar_default"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxWidth="160dp"
+                    android:maxLines="1"
+                    android:text="JOJO"
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/img_head"
+                    app:layout_constraintTop_toTopOf="@+id/img_head" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:gravity="center"
+                    android:text="好有消息"
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_head"
+                    app:layout_constraintTop_toTopOf="@+id/img_head" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center"
+                    android:text="2019.11.27"
+                    android:textColor="#979797"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/img_head" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="我看到你的健康简报了，你昨天怎么那么晚睡？"
+                    android:textColor="#5a5a5a"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_head"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_unread_count"
+                    app:layout_constraintStart_toStartOf="@+id/tv_name" />
+
+                <com.novice.base.widget.MsgView
+                    android:id="@+id/tv_unread_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="#ffffff"
+                    android:textSize="9dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_head"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    mv:mv_backgroundColor="@color/msg_view"
+                    mv:mv_cornerRadius="10dp"
+                    mv:mv_isRadiusHalfHeight="true"
+                    mv:mv_strokeColor="#ffffff"
+                    mv:mv_strokeWidth="1dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_delete"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/buzm_icon_delete" />
+
+            </LinearLayout>
+
+        </com.novice.base.widget.swipe.EasySwipeMenuLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打开" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭" />
+
+    </LinearLayout>
+</layout>

@@ -1,2 +1,2 @@
-include ':app', ':libBase'
+include ':app', ':libBase', ':demo'
 rootProject.name = "LibBaseDemo"

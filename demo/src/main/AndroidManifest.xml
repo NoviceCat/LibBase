@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.novice.demo">
+
+    <application
+        android:name=".application.DemoApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Base">
+
+        <activity
+            android:name=".module.home.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Base.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".module.statuslayout.StatusLayoutActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.customstatuslayout.CustomStatusLayout1Activity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.customstatuslayout.CustomStatusLayout2Activity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.list.ListActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.dialog.CommonAlertDialogActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.container.ContainerActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.widget.WidgetActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.swipe.SwipeMenuActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.web.CommonWebActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.roundimageview.ShapealeImageViewActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.loadingview.LoadingViewActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.viewpager2.DragActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.viewpager2.ViewPager2Activity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.tablayout.TabLayoutActivity"
+            android:screenOrientation="fullSensor" />
+    </application>
+
+</manifest>

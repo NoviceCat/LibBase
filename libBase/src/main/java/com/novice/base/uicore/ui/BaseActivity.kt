@@ -18,7 +18,7 @@ import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.novice.base.R
 import com.novice.base.databinding.ActivityBaseBinding
-import com.novice.base.uicore.inner.IBaseView
+import com.novice.base.uicore.inner.IBaseActivity
 import com.novice.base.uicore.inner.OnToolBarClickListener
 import com.novice.base.uicore.statuslayout.OnStatusCustomClickListener
 import com.novice.base.uicore.statuslayout.OnStatusRetryClickListener
@@ -36,7 +36,7 @@ import com.novice.base.uicore.viewmodel.BaseViewModel
  * @author novice
  *
  */
-abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatActivity(), IBaseView,
+abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatActivity(), IBaseActivity,
     OnToolBarClickListener {
 
     protected val mBinding: VB by lazy(mode = LazyThreadSafetyMode.NONE) {
@@ -196,6 +196,11 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
 
     private fun initContentView() {
         baseBinding = ActivityBaseBinding.inflate(layoutInflater)
+        if (enabledVisibleToolBar()){
+            baseBinding.toolBarView.visibility =View.VISIBLE
+        }else{
+            baseBinding.toolBarView.visibility =View.GONE
+        }
         setContentView(baseBinding.root)
         buildStatusView(baseBinding.flContainer)
         baseBinding.flContainer.addView(mBinding.root)

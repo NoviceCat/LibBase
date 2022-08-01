@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_rose"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/buz_tc_live_icon_praise" />
+
+    <com.novice.demo.module.viewpager2.praiseview.CircleProgressBar
+            android:id="@+id/cicle_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:inner_progress_color="#801F0D33"
+            app:outer_progress_back_color="#1AFFFFFF"
+            app:outer_progress_fore_color="#F9DC53"
+            app:progress_text_color="#F9DC53"
+            app:progress_text_size="12sp" />
+
+</merge>

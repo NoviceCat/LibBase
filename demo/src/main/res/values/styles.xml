@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MarriageTheme.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColorHint">@color/text_color_hint</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@android:color/transparent</item>
+    </style>
+
+    <!--角-->
+    <style name="cutImageView" parent="">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <!--菱形-->
+    <style name="cutImageView2" parent="">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!--右上-->
+    <style name="topRightCorner" parent="">
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeTopRight">50dp</item>
+    </style>
+
+    <!--右邊-->
+    <style name="rightCut" parent="">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSizeTopRight">50%</item>
+        <item name="cornerSizeBottomRight">50%</item>
+    </style>
+
+
+    <declare-styleable name="CicleProgressBar">
+        <attr name="outer_progress_back_color" format="color" />
+        <attr name="outer_progress_fore_color" format="color" />
+        <attr name="inner_progress_color" format="color" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_size" format="dimension" />
+    </declare-styleable>
+
+</resources>

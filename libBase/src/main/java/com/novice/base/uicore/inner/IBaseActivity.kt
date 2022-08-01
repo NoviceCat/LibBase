@@ -11,7 +11,7 @@ import com.novice.base.uicore.view.ToolBarView
  * 用户页面, 操作页面，对应Activity,fragment统一接口层
  * @author novice
  */
-interface IBaseView : ICoreView {
+interface IBaseActivity : ICoreView {
 
     fun enabledDefaultBack(): Boolean
 

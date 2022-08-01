@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="点击我显示错误布局"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#F3F5F9" />
+
+        <com.novice.base.roundview.RoundLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:rv_backgroundColor="#F3F5F9"
+            app:rv_cornerRadius="22dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="有什么想说的？"
+                android:textColor="#222222"
+                android:textColorHint="#D6D6D6"
+                android:textSize="16sp" />
+
+            <com.novice.base.roundview.RoundTextView
+                android:id="@+id/rtv_send"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:text="发送"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:rv_backgroundColor="#FC5044"
+                app:rv_cornerRadius="15dp" />
+
+        </com.novice.base.roundview.RoundLinearLayout>
+
+    </LinearLayout>
+
+</layout>
+
+
+

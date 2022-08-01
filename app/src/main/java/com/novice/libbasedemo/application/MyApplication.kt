@@ -9,7 +9,7 @@ import com.novice.base.net.init.CoroutinesLoadUtils
 import com.novice.base.uicore.utils.UICoreConfig
 import com.novice.libbasedemo.R
 
-class DemoApplication : Core() {
+class MyApplication : Core() {
 
     override fun onCreate() {
         super.onCreate()

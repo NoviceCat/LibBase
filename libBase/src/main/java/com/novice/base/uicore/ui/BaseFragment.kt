@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
-import com.novice.base.uicore.inner.IBaseView
+import com.novice.base.uicore.inner.IBaseFragment
 import com.novice.base.uicore.statuslayout.*
 import com.novice.base.uicore.utils.BindingReflex
 import com.novice.base.uicore.utils.UICoreConfig
@@ -30,7 +30,7 @@ import java.lang.ref.WeakReference
  * @author novice
  *
  */
-abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel> : Fragment(), IBaseView {
+abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel> : Fragment(), IBaseFragment {
 
     lateinit var viewModel: VM
 
@@ -254,11 +254,6 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel> : Fragment(), 
         this.isViewDestroy = true
         super.onDestroy()
     }
-
-    override fun enabledDefaultBack(): Boolean {
-        return false
-    }
-
 
     private fun initBaseCommonComponentView() {
         mComponentView = CommonViewDelegate(context)
