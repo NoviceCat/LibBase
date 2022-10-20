@@ -19,11 +19,6 @@ class CommonAlertDialogActivity :
         }
     }
 
-
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         setToolBarTitle("CommonAlertDialog")
         mBinding.btn1.setOnClickListener {

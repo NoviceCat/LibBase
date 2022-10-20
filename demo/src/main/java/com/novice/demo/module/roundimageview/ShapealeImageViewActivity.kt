@@ -16,11 +16,6 @@ class ShapealeImageViewActivity :
         }
     }
 
-
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         setToolBarTitle("ShapeableImageView")
         //        val radius = 50.0f

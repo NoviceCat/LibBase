@@ -34,11 +34,6 @@ class StatusLayoutActivity : BaseActivity<ActivityStatuslayoutBinding, DefaultVi
         }
     }
 
-
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         setToolBarTitle("StatusLayout")
         mBinding.btnLoading.setOnClickListener {

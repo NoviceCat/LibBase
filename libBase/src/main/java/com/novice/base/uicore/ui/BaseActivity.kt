@@ -36,18 +36,19 @@ import com.novice.base.uicore.viewmodel.BaseViewModel
  * @author novice
  *
  */
-abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatActivity(), IBaseActivity,
-    OnToolBarClickListener {
+abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatActivity(),
+    IBaseActivity, OnToolBarClickListener {
 
     protected val mBinding: VB by lazy(mode = LazyThreadSafetyMode.NONE) {
         BindingReflex.reflexViewBinding(javaClass, layoutInflater)
+    }
+    protected val viewModel: VM by lazy(mode = LazyThreadSafetyMode.NONE) {
+        BindingReflex.reflexViewModel(javaClass, this)
     }
 
     lateinit var baseBinding: ActivityBaseBinding
 
     private val TAG = this.javaClass.simpleName
-
-    lateinit var viewModel: VM
 
     private var componentView: CommonViewDelegate? = null
 
@@ -100,7 +101,6 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
     }
 
     private fun attachViewModelAndLifecycle() {
-        viewModel = initViewModel()
         lifecycle.addObserver(viewModel)
     }
 
@@ -192,14 +192,12 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
         return isViewDestroy
     }
 
-    abstract fun initViewModel(): VM
-
     private fun initContentView() {
         baseBinding = ActivityBaseBinding.inflate(layoutInflater)
-        if (enabledVisibleToolBar()){
-            baseBinding.toolBarView.visibility =View.VISIBLE
-        }else{
-            baseBinding.toolBarView.visibility =View.GONE
+        if (enabledVisibleToolBar()) {
+            baseBinding.toolBarView.visibility = View.VISIBLE
+        } else {
+            baseBinding.toolBarView.visibility = View.GONE
         }
         setContentView(baseBinding.root)
         buildStatusView(baseBinding.flContainer)
@@ -235,7 +233,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
         val cnt = supportFragmentManager.backStackEntryCount
         if (cnt <= 1 && isTaskRoot) {
             val closeWarningHint = "再按一次退出程序"
-            if (!TextUtils.isEmpty(closeWarningHint)) {
+            if (!mCloseWarned) {
                 closeToast =
                     Toast.makeText(applicationContext, closeWarningHint, Toast.LENGTH_SHORT)
                 closeToast!!.show()

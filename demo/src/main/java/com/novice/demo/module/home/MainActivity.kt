@@ -1,6 +1,5 @@
 package com.novice.demo.module.home
 
-import androidx.lifecycle.ViewModelProvider
 import com.blankj.utilcode.util.BarUtils
 import com.novice.base.manager.GridLayoutManagerWrap
 import com.novice.base.uicore.ui.BaseActivity
@@ -18,10 +17,6 @@ import com.novice.demo.module.web.CommonWebActivity
 import com.novice.demo.module.widget.WidgetActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding, DefaultViewModel>() {
-
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
 
     override fun enabledVisibleToolBar() = false
 

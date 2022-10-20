@@ -28,11 +28,6 @@ class VRightFragment : BaseFragment<FragmentRightBinding, ViewPagerViewModel>() 
         }
     }
 
-    override fun initViewModel(): ViewPagerViewModel {
-        return ViewModelProvider(this).get(ViewPagerViewModel::class.java)
-    }
-
-
     override fun initView() {
         val liveID = arguments?.getInt(Extra.arg1) ?: 0
         mBinding.button.text = liveID.toString()

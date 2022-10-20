@@ -41,10 +41,6 @@ class ViewPager2Fragment : BaseFragment<FragmentViewpager2Binding,DefaultViewMod
         }
     }
 
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         val liveID = arguments?.getInt(Extra.arg1) ?: 0
         val position = arguments?.getInt(Extra.POSITION) ?: 0

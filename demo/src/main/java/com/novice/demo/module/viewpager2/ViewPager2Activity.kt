@@ -32,11 +32,6 @@ class ViewPager2Activity : BaseActivity<ActivityViewPager2Binding, DefaultViewMo
         }
     }
 
-
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         EventBus.getDefault().register(this)
         mBinding.viewpager2.orientation = ViewPager2.ORIENTATION_VERTICAL

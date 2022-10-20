@@ -13,10 +13,6 @@ import com.novice.libbasedemo.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainActivity.TestViewModel>() {
 
-    override fun initViewModel(): TestViewModel {
-        return ViewModelProvider(this).get(TestViewModel::class.java)
-    }
-
     override fun initView() {
         super.initView()
         initObserver()

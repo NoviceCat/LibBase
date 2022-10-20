@@ -17,10 +17,6 @@ class DragActivity : BaseActivity<ActivityInteriorBinding, DefaultViewModel>() {
 
     override fun enabledVisibleToolBar() = false
 
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, VRightFragment.newInstance(666), "").commitNow()

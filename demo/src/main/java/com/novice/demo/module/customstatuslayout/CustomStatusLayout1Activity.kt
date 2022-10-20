@@ -20,10 +20,6 @@ class CustomStatusLayout1Activity :
         }
     }
 
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun statusLayoutRetry(view: View, status: StatusLayoutType) {
         when (status) {
             StatusLayoutType.STATUS_EMPTY -> {

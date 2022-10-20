@@ -16,10 +16,6 @@ class SwipeMenuActivity : BaseActivity<ActivitySwipeMenuBinding, DefaultViewMode
         }
     }
 
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         mBinding.btnOpen.setOnClickListener {
             mBinding.swipeMenu.handlerSwipeMenu(State.RIGHTOPEN)

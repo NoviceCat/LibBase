@@ -16,10 +16,6 @@ class IncomeListFragment : SimpleListFragment<String, IncomeListAdapter, IncomeL
         return IncomeListAdapter()
     }
 
-    override fun initViewModel(): IncomeListViewModel {
-        return ViewModelProvider(this).get(IncomeListViewModel::class.java)
-    }
-
     class IncomeListViewModel : SimpleListViewModel<String>() {
 
         override suspend fun requestData(offset: Int, length: Int): CommonResponse<MutableList<String>> {

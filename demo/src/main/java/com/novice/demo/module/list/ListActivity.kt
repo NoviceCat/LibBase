@@ -29,10 +29,6 @@ class ListActivity :
         return ListAdapter()
     }
 
-    override fun initViewModel(): ListViewModel {
-        return ViewModelProvider(this).get(ListViewModel::class.java)
-    }
-
     class ListAdapter : BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_list),
         LoadMoreModule {
         override fun convert(holder: BaseViewHolder, item: String) {

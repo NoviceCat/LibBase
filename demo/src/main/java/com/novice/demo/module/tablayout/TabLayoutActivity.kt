@@ -17,10 +17,6 @@ class TabLayoutActivity : BaseActivity<ActivityTablayoutBinding, DefaultViewMode
         }
     }
 
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         setToolBarTitle("TabLayout+ViewPager")
         setToolBarBottomLineVisible(true)

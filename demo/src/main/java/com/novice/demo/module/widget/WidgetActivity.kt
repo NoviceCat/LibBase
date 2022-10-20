@@ -22,10 +22,6 @@ class WidgetActivity : BaseActivity<ActivityWidgetBinding, DefaultViewModel>() {
         }
     }
 
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         GlideUtils.load(this, R.drawable.banner, mBinding.imgBanner)
         val adapter = WidgetAdapter()

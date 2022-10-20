@@ -23,10 +23,6 @@ class CustomStatusLayout2Activity :
         }
     }
 
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun buildCustomStatusLayoutView(builder: StatusLayoutManager.Builder): StatusLayoutManager.Builder {
         val emptyView =
             LayoutInflater.from(this).inflate(R.layout.view_custom_empty_status_layout, null)

@@ -19,11 +19,6 @@ class LoadingViewActivity : BaseActivity<ActivityLoadingViewBinding, DefaultView
         return false
     }
 
-
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         setToolBarTitle("LoadingView")
         mBinding.loadingView.start()

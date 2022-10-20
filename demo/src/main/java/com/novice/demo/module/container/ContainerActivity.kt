@@ -17,10 +17,6 @@ class ContainerActivity : BaseActivity<ActivityContainerBinding, DefaultViewMode
         }
     }
 
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun statusLayoutRetry(view: View, status: StatusLayoutType) {
         if (status == StatusLayoutType.STATUS_LOAD_ERROR) {
             hideStatusLayout()

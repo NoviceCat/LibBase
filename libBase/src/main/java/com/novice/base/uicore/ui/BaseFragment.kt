@@ -107,7 +107,6 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel> : Fragment(), 
     }
 
     private fun attachViewModelAndLifecycle() {
-        viewModel = initViewModel()
         lifecycle.addObserver(viewModel)
         isAttachViewModelOk = true
     }
@@ -140,9 +139,6 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel> : Fragment(), 
             catchThrowable(e)
         }
     }
-
-
-    abstract fun initViewModel(): VM
 
     /**
      * 运行在initView之后

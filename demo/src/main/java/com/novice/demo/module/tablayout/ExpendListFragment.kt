@@ -17,10 +17,6 @@ class ExpendListFragment :
         return ExpendListAdapter()
     }
 
-    override fun initViewModel(): ExpendListViewModel {
-        return ViewModelProvider(this).get(ExpendListViewModel::class.java)
-    }
-
     class ExpendListViewModel : SimpleListViewModel<String>() {
         override suspend fun requestData(
             offset: Int,

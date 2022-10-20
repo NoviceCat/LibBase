@@ -70,10 +70,6 @@ class CommonWebActivity : SonicWebActivity<DefaultViewModel>() {
         return Color.parseColor("#FC3F65")
     }
 
-    override fun initViewModel(): DefaultViewModel {
-        return ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
-
     override fun initView() {
         super.initView()
         val androidInterface = AndroidInterface(this, agentWeb!!)

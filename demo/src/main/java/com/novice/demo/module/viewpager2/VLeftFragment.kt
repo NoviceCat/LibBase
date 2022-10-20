@@ -22,10 +22,6 @@ class VLeftFragment : BaseFragment<FragmentLeftBinding, ViewPagerViewModel>() {
         }
     }
 
-    override fun initViewModel(): ViewPagerViewModel {
-        return ViewModelProvider(this).get(ViewPagerViewModel::class.java)
-    }
-
     override fun initView() {
         val liveID = arguments?.getInt(Extra.arg1) ?: 0
         mBinding.tvTitle.text = liveID.toString()
