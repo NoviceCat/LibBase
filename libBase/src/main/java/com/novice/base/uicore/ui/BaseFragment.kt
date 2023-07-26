@@ -32,7 +32,9 @@ import java.lang.ref.WeakReference
  */
 abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel> : Fragment(), IBaseFragment {
 
-    lateinit var viewModel: VM
+    protected val viewModel: VM by lazy(mode = LazyThreadSafetyMode.NONE) {
+        BindingReflex.reflexViewModel(javaClass, this)
+    }
 
     private var _binding: VB? = null
 
@@ -99,6 +101,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel> : Fragment(), 
 
     private fun onAttachToContext(context: Context?) {
         try {
+//            initViewModel()
             mViewRef = WeakReference(context as Activity)
             attachViewModelAndLifecycle()
         } catch (e: Throwable) {
