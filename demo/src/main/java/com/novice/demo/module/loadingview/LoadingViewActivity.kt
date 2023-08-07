@@ -2,7 +2,6 @@ package com.novice.demo.module.loadingview
 
 import android.content.Context
 import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
 import com.novice.base.uicore.ui.BaseActivity
 import com.novice.base.uicore.viewmodel.DefaultViewModel
 import com.novice.demo.databinding.ActivityLoadingViewBinding
