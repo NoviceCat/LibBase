@@ -35,6 +35,12 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
     api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
 

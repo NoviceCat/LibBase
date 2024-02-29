@@ -49,10 +49,10 @@ class PraiseView @JvmOverloads constructor(
                             isEnabled = false
                             isClickable = false
                             pbCircle.setProgress(360, 1500, object : Animator.AnimatorListener {
-                                override fun onAnimationRepeat(animation: Animator?) {
+                                override fun onAnimationRepeat(animation: Animator) {
                                 }
 
-                                override fun onAnimationEnd(animation: Animator?) {
+                                override fun onAnimationEnd(animation: Animator) {
                                     pbCircle.visibility = View.GONE
                                     imgRose.visibility = View.VISIBLE
                                     clickCallback?.clickComplete(curCount)
@@ -60,10 +60,10 @@ class PraiseView @JvmOverloads constructor(
                                     isClickable = true
                                 }
 
-                                override fun onAnimationCancel(animation: Animator?) {
+                                override fun onAnimationCancel(animation: Animator) {
                                 }
 
-                                override fun onAnimationStart(animation: Animator?) {
+                                override fun onAnimationStart(animation: Animator) {
                                 }
 
                             })
