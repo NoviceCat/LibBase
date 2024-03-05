@@ -10,6 +10,6 @@
         path="." />
 
     <external-path
-        name="."
+        name="external"
         path="." />
 </paths>

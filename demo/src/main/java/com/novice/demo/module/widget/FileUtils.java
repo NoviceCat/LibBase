@@ -92,32 +92,6 @@ public class FileUtils {
     }
 
 
-    public static Uri SaveBitmapToDevice(Context context, Bitmap bitmap) {
-        // 获取ContentValues对象并添加相关信息
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.Images.ImageColumns.DISPLAY_NAME, "QRPaymentCode"); // 图片名称
-
-        values.put(MediaStore.Images.ImageColumns.MIME_TYPE, "image/jpeg"); // MIME类型
-
-        // 创建Uri对象指向目标位置
-        Uri resultUri = context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-        LogUtils.d("NoviceLog", "resultUri = " + resultUri);
-        try {
-            OutputStream outputStream = context.getContentResolver().openOutputStream(resultUri);
-
-            if (outputStream != null) {
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 90, outputStream); // 将Bitmap写入输出流
-                outputStream.flush();
-                outputStream.close();
-                LogUtils.d("NoviceLog", "Success");
-            } else {
-                LogUtils.d("NoviceLog", "Failed to open output stream.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return resultUri;
-    }
 
     /**
      * 获取 重复文件Uri
@@ -452,6 +426,31 @@ public class FileUtils {
         return delete;
     }
 
+    public static Uri SaveBitmapToDevice(Context context, Bitmap bitmap) {
+        // 获取ContentValues对象并添加相关信息
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.ImageColumns.DISPLAY_NAME, "QRPaymentCode"); // 图片名称
+        values.put(MediaStore.Images.ImageColumns.MIME_TYPE, "image/jpeg"); // MIME类型
+        // 创建Uri对象指向目标位置
+        Uri resultUri = context.getContentResolver().insert(MediaStore.Images.Media.INTERNAL_CONTENT_URI, values);
+        LogUtils.d("NoviceLog", "resultUri = " + resultUri);
+        try {
+            OutputStream outputStream = context.getContentResolver().openOutputStream(resultUri);
+
+            if (outputStream != null) {
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 90, outputStream); // 将Bitmap写入输出流
+                outputStream.flush();
+                outputStream.close();
+                LogUtils.d("NoviceLog", "Success");
+            } else {
+                LogUtils.d("NoviceLog", "Failed to open output stream.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return resultUri;
+    }
+
 
     public static Uri saveBitmapToInternalStorage(Context context, Bitmap bitmap) {
         try {
@@ -464,6 +463,23 @@ public class FileUtils {
 
             return FileProvider.getUriForFile(context,"com.novice.demo.fileprovider", new File(imagePath));
             //return getContentUri(context,new File(imagePath));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    public static Uri saveBitmapToDatData(Context context, Bitmap bitmap) {
+        try {
+            // 获取应用的私有目录路径
+            File file = new File(context.getFilesDir(),"QRPaymentCode.png");
+
+            FileOutputStream fos = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fos); // 将Bitmap写入输出流
+            fos.flush();
+            fos.close();
+            return FileProvider.getUriForFile(context,"com.novice.demo.fileprovider", file);
         } catch (IOException e) {
             e.printStackTrace();
             return null;

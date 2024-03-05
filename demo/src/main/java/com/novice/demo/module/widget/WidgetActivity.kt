@@ -119,7 +119,7 @@ class WidgetActivity : BaseActivity<ActivityWidgetBinding, DefaultViewModel>() {
 
                         var shareIntent = Intent()
                         shareIntent.setAction(Intent.ACTION_SEND)
-                        shareIntent.setType("*/*")
+                        shareIntent.setType("image/*")
                         //其中imgUri为图片的标识符
                         shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri)
                         shareIntent.putExtra(Intent.EXTRA_TEXT, "ShareDetail\nLater")
