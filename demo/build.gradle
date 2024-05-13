@@ -44,4 +44,6 @@ dependencies {
     api dep.buglyNative
 }
 
+apply from: '../aspectj.gradle'
+
 

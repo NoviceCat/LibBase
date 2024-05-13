@@ -72,6 +72,9 @@ ext {
             //BugLy
             buglyUpdate          : 'com.tencent.bugly:crashreport_upgrade:1.4.5',
             buglyNative          : 'com.tencent.bugly:nativecrashreport:3.7.1',
+
+            //AspectJ
+            aspectJ              : 'org.aspectj:aspectjrt:1.9.8',
             /****************************以上是业务所需依赖**************************************************/
     ]
 }

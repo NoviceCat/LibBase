@@ -78,6 +78,10 @@
         <activity
             android:name=".module.tablayout.TabLayoutActivity"
             android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.aspectj.AspectActivity"
+            android:screenOrientation="fullSensor" />
+
     </application>
 
 </manifest>

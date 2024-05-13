@@ -101,6 +101,11 @@ dependencies {
 
     //图片选择器
     api dep.pictureSelector
+
+    //AspectJ AOP
+    api dep.aspectJ
 }
+
+apply from: '../aspectj.gradle'
 
 
