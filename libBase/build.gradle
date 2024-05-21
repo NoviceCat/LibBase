@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
+    namespace = "com.novice.base"
 
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     defaultConfig {
@@ -55,7 +56,7 @@ dependencies {
     api dep.kt_stdlib
     api dep.kt_coroutines_core
     api dep.kt_coroutines_android
-    api dep.lifecycler_ext
+//    api dep.lifecycler_ext
     api dep.lifecycler_viewmodel
 
     //网络

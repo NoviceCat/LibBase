@@ -158,6 +158,7 @@ class WidgetActivity : BaseActivity<ActivityWidgetBinding, DefaultViewModel>() {
                 "ShapeableImageView" -> {
                     ShapealeImageViewActivity.start(this)
                 }
+                else -> {}
             }
         }
     }

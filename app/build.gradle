@@ -4,9 +4,9 @@ plugins {
 }
 
 android {
+    namespace = "com.novice.libbasedemo"
 
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-
     defaultConfig {
         applicationId "com.novice.libbasedemo"
         minSdkVersion rootProject.ext.android["minSdkVersion"]

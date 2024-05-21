@@ -41,6 +41,7 @@ class DragConstraintLayout @JvmOverloads constructor(context: Context, attrs: At
                     hasDy = false
                 }
             }
+            else -> {}
         }
         if (isCanDrag) {
             EventBus.getDefault().post(EventMessage(1))

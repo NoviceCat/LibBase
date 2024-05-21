@@ -172,6 +172,7 @@ class EditDialog(context: Context) : BasePopupWindow(context), View.OnClickListe
                 dismiss()
                 listener?.onRightEditBtnClick(v, etContent.text.toString().trimEnd())
             }
+            else -> {}
         }
     }
 

@@ -39,6 +39,7 @@ class VRightFragment : BaseFragment<FragmentRightBinding, ViewPagerViewModel>() 
                 R.id.drag_view2 -> {
                     ToastUtils.showLong("我被点击了Drag2")
                 }
+                else -> {}
             }
         }, mBinding.dragView1, mBinding.dragView2)
         mBinding.button.setOnClickListener {

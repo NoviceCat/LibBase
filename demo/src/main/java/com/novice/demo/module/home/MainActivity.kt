@@ -77,6 +77,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, DefaultViewModel>() {
                 "AspectJ" -> {
                     AspectActivity.start(this)
                 }
+                else ->{}
             }
         }
     }

@@ -154,6 +154,7 @@ class ConfirmDialog(context: Context) : BasePopupWindow(context), View.OnClickLi
                 dismiss()
                 listener?.onRightBtnClick(v)
             }
+            else -> {}
         }
     }
 

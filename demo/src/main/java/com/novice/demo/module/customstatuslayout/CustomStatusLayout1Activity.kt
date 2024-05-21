@@ -34,6 +34,7 @@ class CustomStatusLayout1Activity :
                 hideStatusLayout()
                 showToast("隐藏了网络断开布局")
             }
+            else -> {}
         }
     }
 

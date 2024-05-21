@@ -37,6 +37,7 @@ class CustomScrollViewPager @JvmOverloads constructor(context: Context, attrs: A
                     }
                 }
             }
+            else -> {}
         }
         return super.dispatchTouchEvent(ev)
     }

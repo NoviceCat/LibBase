@@ -75,6 +75,7 @@ class CustomStatusLayout2Activity :
                         R.id.btn2 -> {
                             showToast("我是点击事件")
                         }
+                        else -> {}
                     }
                 }
             }, R.id.btn1, R.id.btn2)

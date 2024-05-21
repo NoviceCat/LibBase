@@ -176,6 +176,7 @@ class ToolBarView @JvmOverloads constructor(context: Context, attrs: AttributeSe
                 ViewType.CENTER_TEXT -> setCenterTextVisible(isVisible)
                 ViewType.RIGHT_TEXT -> setRightTextVisible(isVisible)
                 ViewType.RIGHT_IMAGE -> setRightImageVisible(isVisible)
+                else -> {}
             }
         }
         return this
@@ -277,6 +278,7 @@ class ToolBarView @JvmOverloads constructor(context: Context, attrs: AttributeSe
             R.id.img_right -> {
                 listener?.onClickToolBarView(v, ViewType.RIGHT_IMAGE)
             }
+            else -> {}
         }
     }
 

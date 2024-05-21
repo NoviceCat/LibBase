@@ -31,6 +31,7 @@ class StatusLayoutActivity : BaseActivity<ActivityStatuslayoutBinding, DefaultVi
                 hideStatusLayout()
                 showToast("隐藏了网络断开布局")
             }
+            else -> {}
         }
     }
 

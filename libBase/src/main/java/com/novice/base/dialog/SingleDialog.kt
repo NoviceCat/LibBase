@@ -125,6 +125,7 @@ class SingleDialog(context: Context) : BasePopupWindow(context), View.OnClickLis
                 dismiss()
                 listener?.onConfirmBtnClick(v)
             }
+            else -> {}
         }
     }
 

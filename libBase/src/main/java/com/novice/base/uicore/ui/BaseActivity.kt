@@ -374,6 +374,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
                     onBackPressed()
                 }
             }
+            else -> {}
         }
     }
 
