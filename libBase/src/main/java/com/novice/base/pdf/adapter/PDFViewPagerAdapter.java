@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2016 Olmo Gallegos Hernández.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.novice.base.pdf.adapter;
 
 import android.app.Activity;
@@ -34,8 +19,36 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 
+public class PDFViewPagerAdapter extends PagerAdapter {
 
-public class BasePDFPagerAdapter extends PagerAdapter {
+    public static class Builder {
+        Context context;
+        String pdfPath = "";
+        int offScreenSize = DEFAULT_OFFSCREENSIZE;
+        float renderQuality = DEFAULT_QUALITY;
+
+        public Builder(Context context) {
+            this.context = context;
+        }
+
+        public PDFViewPagerAdapter.Builder setOffScreenSize(int offScreenSize) {
+            this.offScreenSize = offScreenSize;
+            return this;
+        }
+
+        public PDFViewPagerAdapter.Builder setPdfPath(String path) {
+            this.pdfPath = path;
+            return this;
+        }
+
+        public PDFViewPagerAdapter create() {
+            PDFViewPagerAdapter adapter = new PDFViewPagerAdapter(context, pdfPath);
+            adapter.offScreenSize = offScreenSize;
+            adapter.renderQuality = renderQuality;
+            return adapter;
+        }
+    }
+
     protected static final int FIRST_PAGE = 0;
     protected static final float DEFAULT_QUALITY = 2.0f;
     protected static final int DEFAULT_OFFSCREENSIZE = 1;
@@ -43,44 +56,18 @@ public class BasePDFPagerAdapter extends PagerAdapter {
     protected String pdfPath;
     protected Context context;
     protected PdfRenderer renderer;
-    protected BitmapContainer bitmapContainer;
+    protected SimpleBitmapPool bitmapContainer;
     protected LayoutInflater inflater;
 
     protected float renderQuality;
     protected int offScreenSize;
 
-    protected PdfErrorHandler errorHandler = new NullPdfErrorHandler();
 
-    public BasePDFPagerAdapter(Context context, String pdfPath) {
+    public PDFViewPagerAdapter(Context context, String pdfPath) {
         this.pdfPath = pdfPath;
         this.context = context;
         this.renderQuality = DEFAULT_QUALITY;
         this.offScreenSize = DEFAULT_OFFSCREENSIZE;
-
-        init();
-    }
-
-    public BasePDFPagerAdapter(Context context, String pdfPath, PdfErrorHandler errorHandler) {
-        this.pdfPath = pdfPath;
-        this.context = context;
-        this.renderQuality = DEFAULT_QUALITY;
-        this.offScreenSize = DEFAULT_OFFSCREENSIZE;
-        if (errorHandler != null) {
-            this.errorHandler = errorHandler;
-        }
-
-        init();
-    }
-
-    /**
-     * This constructor was added for those who want to customize ViewPager's offScreenSize attr
-     */
-    public BasePDFPagerAdapter(Context context, String pdfPath, int offScreenSize) {
-        this.pdfPath = pdfPath;
-        this.context = context;
-        this.renderQuality = DEFAULT_QUALITY;
-        this.offScreenSize = offScreenSize;
-
         init();
     }
 
@@ -91,8 +78,8 @@ public class BasePDFPagerAdapter extends PagerAdapter {
             inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             PdfRendererParams params = extractPdfParamsFromFirstPage(renderer, renderQuality);
             bitmapContainer = new SimpleBitmapPool(params);
-        } catch (IOException e) {
-            errorHandler.onPdfError(e);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -113,48 +100,31 @@ public class BasePDFPagerAdapter extends PagerAdapter {
 
     protected ParcelFileDescriptor getSeekableFileDescriptor(String path) throws IOException {
         ParcelFileDescriptor parcelFileDescriptor;
-
         File pdfCopy = new File(path);
-
         if (pdfCopy.exists()) {
             parcelFileDescriptor = ParcelFileDescriptor.open(pdfCopy, ParcelFileDescriptor.MODE_READ_ONLY);
             return parcelFileDescriptor;
         }
-
-        if (isAnAsset(path)) {
-            pdfCopy = new File(context.getCacheDir(), path);
-            parcelFileDescriptor = ParcelFileDescriptor.open(pdfCopy, ParcelFileDescriptor.MODE_READ_ONLY);
-        } else {
-            URI uri = URI.create(String.format("file://%s", path));
-            parcelFileDescriptor = context.getContentResolver().openFileDescriptor(Uri.parse(uri.toString()), "rw");
-        }
-
+        URI uri = URI.create(String.format("file://%s", path));
+        parcelFileDescriptor = context.getContentResolver().openFileDescriptor(Uri.parse(uri.toString()), "rw");
         return parcelFileDescriptor;
     }
 
-    protected boolean isAnAsset(String path) {
-        return !path.startsWith("/");
-    }
 
     @Override
     @SuppressWarnings("NewApi")
     public Object instantiateItem(ViewGroup container, int position) {
         View v = inflater.inflate(R.layout.view_pdf_page, container, false);
-        ImageView iv = (ImageView) v.findViewById(R.id.imageView);
-
+        ImageView ssiv = v.findViewById(R.id.imageView);
         if (renderer == null || getCount() < position) {
             return v;
         }
-
         PdfRenderer.Page page = getPDFPage(renderer, position);
-
         Bitmap bitmap = bitmapContainer.get(position);
+        ssiv.setImageBitmap(bitmap);
         page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
         page.close();
-
-        iv.setImageBitmap(bitmap);
         container.addView(v, 0);
-
         return v;
     }
 
@@ -193,4 +163,5 @@ public class BasePDFPagerAdapter extends PagerAdapter {
     public boolean isViewFromObject(View view, Object object) {
         return view == (View) object;
     }
+
 }

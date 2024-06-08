@@ -42,9 +42,6 @@ public class PdfRendererParams {
         this.height = height;
     }
 
-    public float getRenderQuality() {
-        return renderQuality;
-    }
 
     public void setRenderQuality(float renderQuality) {
         this.renderQuality = renderQuality;
@@ -62,7 +59,4 @@ public class PdfRendererParams {
         return config;
     }
 
-    public void setConfig(Bitmap.Config config) {
-        this.config = config;
-    }
 }

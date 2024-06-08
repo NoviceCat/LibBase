@@ -3,7 +3,7 @@ package com.novice.demo.module.pdfreader
 import android.content.Context
 import android.content.Intent
 import com.novice.base.pdf.PDFViewPager
-import com.novice.base.pdf.adapter.PDFPagerAdapter
+import com.novice.base.pdf.adapter.PDFViewPagerAdapter
 import com.novice.base.uicore.ui.BaseActivity
 import com.novice.base.uicore.viewmodel.DefaultViewModel
 import com.novice.demo.databinding.ActivityPdfReaderBinding
@@ -46,7 +46,7 @@ class PDFReaderActivity : BaseActivity<ActivityPdfReaderBinding, DefaultViewMode
     }
 
     private fun releasePDFReader(){
-        (pdfViewPager?.adapter as PDFPagerAdapter?)?.close()
+        (pdfViewPager?.adapter as PDFViewPagerAdapter?)?.close()
         mBinding.flContainer.removeAllViews()
         pdfViewPager = null
     }

@@ -6,6 +6,4 @@
     <string name="status_layout_load_error">数据加载失败，请刷新重试</string>
     <string name="status_layout_net_disconnect">网络异常，请刷新重试</string>
 
-    <string name="pdfvp_ready_to_download">Ready to download</string>
-
 </resources>

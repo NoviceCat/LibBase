@@ -19,7 +19,7 @@ package com.novice.base.pdf.adapter;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 
-public class SimpleBitmapPool implements BitmapContainer {
+public class SimpleBitmapPool {
 
     Bitmap[] bitmaps;
 
@@ -54,18 +54,10 @@ public class SimpleBitmapPool implements BitmapContainer {
         return bitmaps[index];
     }
 
-    @Override
     public Bitmap get(int position) {
         return getBitmap(position);
     }
 
-    @Override
-    public void remove(int position) {
-        bitmaps[position].recycle();
-        bitmaps[position] = null;
-    }
-
-    @Override
     public void clear() {
         recycleAll();
     }

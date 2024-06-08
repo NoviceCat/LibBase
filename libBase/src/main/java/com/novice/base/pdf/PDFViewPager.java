@@ -16,14 +16,13 @@
 package com.novice.base.pdf;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 import androidx.viewpager.widget.ViewPager;
 
 import com.novice.base.R;
-import com.novice.base.pdf.adapter.PDFPagerAdapter;
+import com.novice.base.pdf.adapter.PDFViewPagerAdapter;
 
 
 public class PDFViewPager extends ViewPager {
@@ -51,22 +50,22 @@ public class PDFViewPager extends ViewPager {
             return;
         }
 
-        if (attrs != null) {
-            TypedArray a;
-
-            a = context.obtainStyledAttributes(attrs, R.styleable.PDFViewPager);
-            String assetFileName = a.getString(R.styleable.PDFViewPager_assetFileName);
-
-            if (assetFileName != null && assetFileName.length() > 0) {
-                initAdapter(context, assetFileName);
-            }
-
-            a.recycle();
-        }
+//        if (attrs != null) {
+//            TypedArray a;
+//
+//            a = context.obtainStyledAttributes(attrs, R.styleable.PDFViewPager);
+//            String assetFileName = a.getString(R.styleable.PDFViewPager_assetFileName);
+//
+//            if (assetFileName != null && assetFileName.length() > 0) {
+//                initAdapter(context, assetFileName);
+//            }
+//
+//            a.recycle();
+//        }
     }
 
     protected void initAdapter(Context context, String pdfPath) {
-        setAdapter(new PDFPagerAdapter.Builder(context)
+        setAdapter(new PDFViewPagerAdapter.Builder(context)
                 .setPdfPath(pdfPath)
                 .setOffScreenSize(getOffscreenPageLimit())
                 .create());
