@@ -11,6 +11,7 @@ import com.novice.demo.module.customstatuslayout.CustomStatusLayout1Activity
 import com.novice.demo.module.customstatuslayout.CustomStatusLayout2Activity
 import com.novice.demo.module.dialog.CommonAlertDialogActivity
 import com.novice.demo.module.list.ListActivity
+import com.novice.demo.module.pdfreader.PDFReaderActivity
 import com.novice.demo.module.statuslayout.StatusLayoutActivity
 import com.novice.demo.module.viewpager2.DragActivity
 import com.novice.demo.module.viewpager2.ViewPager2Activity
@@ -37,7 +38,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, DefaultViewModel>() {
         val list = mutableListOf(
             "基础控件", "CommonAlertDialog", "StatusLayout", "自定义StatusLayout", "完全自定义StatusLayout",
             "指定StatusLayout覆盖区域", "SimpleList", "CommonWeb",
-            "ViewPager2", "drag","AspectJ"
+            "ViewPager2", "drag","AspectJ","PDFReader"
         )
         mBinding.recyclerView.adapter = adapter
         mBinding.recyclerView.layoutManager = GridLayoutManagerWrap(this, 2)
@@ -76,6 +77,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, DefaultViewModel>() {
                 }
                 "AspectJ" -> {
                     AspectActivity.start(this)
+                }
+                "PDFReader" ->{
+                    PDFReaderActivity.start(this)
                 }
                 else ->{}
             }

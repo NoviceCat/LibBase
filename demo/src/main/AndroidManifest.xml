@@ -81,6 +81,9 @@
         <activity
             android:name=".module.aspectj.AspectActivity"
             android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".module.pdfreader.PDFReaderActivity"
+            android:screenOrientation="fullSensor" />
 
     </application>
 
